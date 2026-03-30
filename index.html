@@ -207,6 +207,15 @@
       .nav a {
         color: var(--text);
         font-size: 0.98rem;
+        padding: 8px 16px;
+        border-radius: 999px;
+        transition: all 0.25s ease;
+      }
+
+      .nav a:hover {
+        background: var(--primary);
+        color: #ffffff;
+        box-shadow: 0 6px 14px rgba(191, 71, 34, 0.25);
       }
 
       .hero {
@@ -429,10 +438,10 @@
   </head>
   <body>
     <div class="shell">
-      <div class="shape shape-left"></div>
+      <!--<div class="shape shape-left"></div>
       <div class="shape shape-right"></div>
       <div class="sun"></div>
-      <div class="half-sun"></div>
+      <div class="half-sun"></div>-->
 
       <header class="topbar">
         <center>
@@ -442,17 +451,19 @@
             </a>
           </div>
         </center>
-        <div>
-          <nav class="nav">
-            <a href="#chi-siamo">Chi siamo</a>
-            <a href="#news">News</a>
-            <a href="#docenti">Docenti</a>
-            <a href="#studenti">Studenti</a>
-            <a href="#ata">ATA</a>
-            <a href="#metodo">Metodo</a>
-            <a href="#contatti">Contatti</a>
-          </nav>
-        </div>
+        <center>
+          <div>
+            <nav class="nav">
+              <a href="#chi-siamo">Chi siamo</a>
+              <a href="#news">News</a>
+              <a href="#docenti">Docenti</a>
+              <a href="#studenti">Studenti</a>
+              <a href="#ata">ATA</a>
+              <a href="#metodo">Metodo</a>
+              <a href="#contatti">Contatti</a>
+            </nav>
+          </div>
+        </center>
       </header>
 
       <main>
