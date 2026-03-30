@@ -3,26 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FormaMentisForFuture | Corsi di formazione</title>
+    <title>FormaMentis For Future | Formazione per docenti e studenti</title>
     <meta
       name="description"
-      content="Associazione che organizza corsi di formazione con uno stile caldo, essenziale e contemporaneo."
+      content="Associazione che progetta percorsi di formazione per docenti, studenti e scuole, con focus su innovazione didattica, orientamento e competenze trasversali."
     />
     <style>
       :root {
         --bg: #f3f1ef;
-        --paper: #f8f5f2;
-        --text: #7a2418;
-        --text-dark: #5f1b13;
-        --muted: #a05c4b;
-        --accent: #b93f1f;
-        --accent-soft: #d28a74;
-        --accent-pale: #ead0c8;
-        --line: rgba(122, 36, 24, 0.14);
-        --white: #fffaf7;
-        --shadow: 0 18px 40px rgba(122, 36, 24, 0.08);
+        --surface: #fcfaf8;
+        --surface-soft: #f7f1ed;
+        --primary: #bf4722;
+        --primary-dark: #9f3417;
+        --text: #000000;
+        --muted: #4f4f4f;
+        --line: rgba(191, 71, 34, 0.16);
+        --shadow: 0 18px 40px rgba(121, 44, 26, 0.08);
         --radius-xl: 34px;
-        --radius-lg: 24px;
+        --radius-lg: 26px;
         --radius-md: 18px;
       }
 
@@ -31,11 +29,13 @@
       body {
         margin: 0;
         font-family: Inter, "Segoe UI", Arial, sans-serif;
+        font-style: italic;
+        color: var(--text);
         background: var(--bg);
-        color: var(--text-dark);
-        line-height: 1.6;
+        line-height: 1.65;
       }
 
+      img { max-width: 100%; display: block; }
       a { color: inherit; text-decoration: none; }
 
       .container {
@@ -43,124 +43,109 @@
         margin: 0 auto;
       }
 
-      .script-font {
-        font-family: "Brush Script MT", "Segoe Script", cursive;
-        letter-spacing: 0.02em;
-      }
-
-      .site-shell {
+      .shell {
         position: relative;
         overflow: hidden;
         min-height: 100vh;
       }
 
-      .blob,
-      .arch,
+      .shape,
       .sun,
-      .mini-sun {
+      .half-sun {
         position: absolute;
         pointer-events: none;
         z-index: 0;
       }
 
-      .arch-left {
-        left: -48px;
-        top: 230px;
-        width: 185px;
-        height: 290px;
-        border-radius: 185px 185px 0 0;
-        background: #d08e79;
+      .shape-left {
+        left: -36px;
+        top: 250px;
+        width: 160px;
+        height: 300px;
+        border-radius: 160px 160px 0 0;
+        background: #d0927f;
       }
 
-      .arch-left::before,
-      .arch-left::after {
+      .shape-left::before,
+      .shape-left::after,
+      .shape-right::before,
+      .shape-right::after {
         content: "";
         position: absolute;
         bottom: 0;
         border-radius: inherit;
       }
 
-      .arch-left::before {
-        inset: 44px 39px 0 0;
-        background: #bf4320;
+      .shape-left::before {
+        inset: 42px 38px 0 0;
+        background: #c04622;
       }
 
-      .arch-left::after {
-        inset: 86px 72px 0 0;
-        background: #c26246;
+      .shape-left::after {
+        inset: 82px 72px 0 0;
+        background: #c26447;
       }
 
-      .arch-right {
-        right: -22px;
-        top: 300px;
-        width: 180px;
-        height: 278px;
-        border-radius: 180px 180px 0 0;
-        background: #d08e79;
+      .shape-right {
+        right: -24px;
+        top: 320px;
+        width: 170px;
+        height: 280px;
+        border-radius: 170px 170px 0 0;
+        background: #d0927f;
       }
 
-      .arch-right::before,
-      .arch-right::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        border-radius: inherit;
+      .shape-right::before {
+        inset: 42px 0 0 38px;
+        background: #c04622;
       }
 
-      .arch-right::before {
-        inset: 42px 0 0 40px;
-        background: #bf4320;
-      }
-
-      .arch-right::after {
-        inset: 86px 0 0 76px;
-        background: #c26246;
+      .shape-right::after {
+        inset: 82px 0 0 74px;
+        background: #c26447;
       }
 
       .sun {
-        right: 34px;
-        top: 118px;
-        width: 300px;
-        height: 300px;
+        right: 24px;
+        top: 110px;
+        width: 290px;
+        height: 290px;
         border-radius: 50%;
         background: #bb411f;
         overflow: hidden;
       }
 
-      .sun::before,
+      .sun::before {
+        content: "";
+        position: absolute;
+        right: 34px;
+        top: 44px;
+        width: 136px;
+        height: 136px;
+        border-radius: 50%;
+        background: rgba(232, 184, 165, 0.3);
+      }
+
       .sun::after {
         content: "";
         position: absolute;
-        border-radius: 50%;
-      }
-
-      .sun::before {
-        right: 32px;
-        top: 48px;
-        width: 138px;
-        height: 138px;
-        background: rgba(232, 182, 162, 0.32);
-      }
-
-      .sun::after {
         left: 0;
         right: 0;
         bottom: 0;
-        height: 116px;
-        border-radius: 0;
+        height: 118px;
         background: linear-gradient(
           to bottom,
-          #e9cfc7 0 25%,
-          #e5c2b6 25% 48%,
-          #d9a896 48% 67%,
-          #edd7cf 67% 80%,
+          #ead5cf 0 24%,
+          #e1c0b5 24% 48%,
+          #d79f8c 48% 67%,
+          #eddcd5 67% 80%,
           transparent 80%
         );
       }
 
-      .mini-sun {
+      .half-sun {
         right: 300px;
-        top: 466px;
+        top: 480px;
         width: 120px;
         height: 120px;
         border-radius: 120px 120px 0 0;
@@ -168,21 +153,21 @@
         overflow: hidden;
       }
 
-      .mini-sun::after {
+      .half-sun::after {
         content: "";
         position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
-        height: 28px;
+        height: 30px;
         background: #e5c2b6;
       }
 
       .topbar {
         position: sticky;
         top: 0;
-        z-index: 10;
-        background: rgba(243, 241, 239, 0.88);
+        z-index: 20;
+        background: rgba(243, 241, 239, 0.9);
         backdrop-filter: blur(12px);
       }
 
@@ -192,7 +177,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 18px;
+        gap: 24px;
         padding: 22px 0;
       }
 
@@ -200,89 +185,71 @@
         display: flex;
         align-items: center;
         gap: 14px;
-        color: var(--text);
       }
 
-      .brand-mark {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        border: 2px solid var(--accent);
-        display: grid;
-        place-items: center;
-        font-size: 1.2rem;
+      .brand img {
+        width: 54px;
+        height: auto;
       }
 
-      .brand-title {
-        font-size: 1.75rem;
-        line-height: 0.9;
-      }
-
-      .brand-subtitle {
-        font-size: 0.92rem;
-        color: var(--muted);
+      .brand-name {
+        font-size: 1.28rem;
+        font-weight: 600;
+        color: var(--primary-dark);
       }
 
       .nav {
         display: flex;
-        align-items: center;
-        gap: 24px;
-        color: var(--muted);
+        gap: 22px;
+        flex-wrap: wrap;
       }
 
       .nav a {
+        color: var(--text);
         font-size: 0.98rem;
       }
 
       .hero {
         position: relative;
         z-index: 1;
-        padding: 84px 0 72px;
+        padding: 86px 0 74px;
       }
 
-      .hero-inner {
+      .hero-grid {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 40px;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 42px;
         align-items: center;
       }
 
-      .logo-line {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        color: var(--accent);
-        margin-bottom: 26px;
+      .hero-logo {
+        margin-bottom: 24px;
       }
 
-      .logo-icon {
-        font-size: 2.6rem;
-        line-height: 1;
-      }
-
-      .logo-text {
-        font-size: 2.2rem;
-        line-height: 0.9;
+      .hero-logo img {
+        width: min(100%, 520px);
+        height: auto;
       }
 
       .hero-title {
-        font-size: clamp(3.4rem, 8vw, 6.4rem);
-        line-height: 0.92;
-        color: #000000;
         margin: 0 0 18px;
+        font-size: clamp(2.8rem, 6vw, 5.3rem);
+        line-height: 0.98;
+        color: var(--primary-dark);
+        font-weight: 600;
       }
 
       .hero-copy {
-        max-width: 620px;
+        max-width: 650px;
         font-size: 1.08rem;
-        color: #000000;
+        color: var(--text);
       }
 
       .hero-actions {
         display: flex;
-        gap: 14px;
         flex-wrap: wrap;
-        margin-top: 26px;
+        gap: 14px;
+        margin-top: 28px;
       }
 
       .btn {
@@ -292,46 +259,56 @@
         padding: 14px 24px;
         border-radius: 999px;
         border: 1px solid transparent;
-        font-weight: 700;
+        font-weight: 600;
         transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
       }
 
       .btn:hover { transform: translateY(-2px); }
+
       .btn-primary {
-        background: var(--accent);
-        color: var(--white);
+        background: var(--primary);
+        color: #fff;
         box-shadow: var(--shadow);
       }
+
       .btn-secondary {
+        background: rgba(255,255,255,0.5);
         border-color: var(--line);
-        background: rgba(255, 250, 247, 0.74);
         color: var(--text);
+      }
+
+      .hero-card,
+      .panel,
+      .card {
+        background: rgba(252, 250, 248, 0.82);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow);
       }
 
       .hero-card {
-        position: relative;
-        background: rgba(255, 250, 247, 0.65);
-        border: 1px solid rgba(122, 36, 24, 0.12);
-        border-radius: var(--radius-xl);
-        padding: 28px;
-        box-shadow: var(--shadow);
+        padding: 30px;
       }
 
-      .hero-card h3 {
-        margin: 0 0 8px;
+      .hero-card h3,
+      .card h3 {
+        margin: 0 0 12px;
         font-size: 1.5rem;
-        color: var(--text);
+        color: var(--primary-dark);
+        font-weight: 600;
       }
 
-      .hero-list {
+      .hero-list,
+      .check-list {
         list-style: none;
-        margin: 18px 0 0;
         padding: 0;
+        margin: 20px 0 0;
         display: grid;
         gap: 12px;
       }
 
-      .hero-list li {
+      .hero-list li,
+      .check-list li {
         padding: 14px 16px;
         border-radius: 18px;
         background: rgba(233, 207, 199, 0.45);
@@ -343,84 +320,55 @@
         padding: 72px 0;
       }
 
+      .section-head {
+        max-width: 760px;
+        margin-bottom: 26px;
+      }
+
       .section-title {
-        font-size: clamp(2.6rem, 5vw, 4rem);
-        color: var(--text);
         margin: 0 0 10px;
+        font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+        line-height: 1.04;
+        color: var(--primary-dark);
+        font-weight: 600;
       }
 
-      .section-lead {
-        max-width: 720px;
-        color: var(--muted);
-        font-size: 1.05rem;
+      .section-text {
+        color: var(--text);
+        font-size: 1.04rem;
       }
 
-      .soft-panel {
-        background: rgba(255, 250, 247, 0.7);
-        border: 1px solid rgba(122, 36, 24, 0.1);
-        border-radius: 36px;
-        box-shadow: var(--shadow);
-      }
-
-      .about-grid,
+      .two-col,
       .contact-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 28px;
-        align-items: start;
       }
 
-      .about-card,
-      .contact-card {
+      .panel {
         padding: 30px;
       }
 
-      .courses-grid,
-      .audience-grid {
+      .cards-3 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 22px;
-        margin-top: 28px;
       }
 
-      .course-card,
-      .audience-card {
+      .card {
         padding: 26px;
         border-radius: 28px;
-        background: rgba(255, 250, 247, 0.72);
-        border: 1px solid rgba(122, 36, 24, 0.1);
-        box-shadow: var(--shadow);
       }
 
-      .course-duration {
+      .tag {
         display: inline-block;
-        padding: 7px 12px;
+        padding: 8px 12px;
         border-radius: 999px;
-        background: rgba(185, 63, 31, 0.12);
-        color: var(--accent);
-        font-weight: 700;
+        background: rgba(191, 71, 34, 0.12);
+        color: var(--primary-dark);
         font-size: 0.9rem;
-      }
-
-      .course-card h3,
-      .audience-card h3 {
-        margin: 14px 0 10px;
-        color: var(--text);
-        font-size: 1.4rem;
-      }
-
-      .method-list {
-        list-style: none;
-        padding: 0;
-        margin: 24px 0 0;
-        display: grid;
-        gap: 14px;
-      }
-
-      .method-list li {
-        padding: 16px 18px;
-        border-radius: 20px;
-        background: rgba(233, 207, 199, 0.45);
+        font-weight: 600;
+        margin-bottom: 12px;
       }
 
       .contact-box {
@@ -428,27 +376,24 @@
       }
 
       .contact-item {
-        padding: 16px 0;
-        border-bottom: 1px solid rgba(122, 36, 24, 0.1);
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
       }
 
-      .contact-item:last-child {
-        border-bottom: none;
-      }
+      .contact-item:last-child { border-bottom: none; }
 
       footer {
         position: relative;
         z-index: 1;
-        padding: 28px 0 46px;
+        padding: 30px 0 46px;
         color: var(--muted);
       }
 
       @media (max-width: 980px) {
-        .hero-inner,
-        .about-grid,
+        .hero-grid,
+        .two-col,
         .contact-grid,
-        .courses-grid,
-        .audience-grid {
+        .cards-3 {
           grid-template-columns: 1fr;
         }
 
@@ -458,8 +403,8 @@
           right: 10px;
         }
 
-        .mini-sun {
-          right: 190px;
+        .half-sun {
+          right: 180px;
           top: 420px;
         }
       }
@@ -470,79 +415,36 @@
           align-items: flex-start;
         }
 
-        .nav {
-          flex-wrap: wrap;
-          gap: 14px;
-        }
-
         .hero {
-          padding-top: 54px;
+          padding-top: 52px;
         }
 
-        .hero-title,
-        .section-title {
-          line-height: 0.98;
-        }
-
+        .shape-right,
         .sun,
-        .mini-sun,
-        .arch-right {
+        .half-sun {
           opacity: 0.45;
         }
       }
     </style>
   </head>
   <body>
-    <div class="site-shell">
-      <div class="arch arch-left"></div>
-      <div class="arch arch-right"></div>
+    <div class="shell">
+      <div class="shape shape-left"></div>
+      <div class="shape shape-right"></div>
       <div class="sun"></div>
-      <div class="mini-sun"></div>
+      <div class="half-sun"></div>
 
       <header class="topbar">
         <div class="container topbar-inner">
-          <a href="#home" class="brand">
-            <div class="brand-mark">
-              <svg viewBox="0 0 64 64" aria-hidden="true" style="width:28px;height:28px;display:block">
-                <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M32 46 V22"/>
-                  <path d="M25 58 H39"/>
-                  <path d="M20 12 C24 14, 26 17, 27 22"/>
-                  <path d="M14 17 C20 18, 24 21, 26 26"/>
-                  <path d="M12 25 C18 25, 23 27, 26 31"/>
-                  <path d="M44 12 C40 14, 38 17, 37 22"/>
-                  <path d="M50 17 C44 18, 40 21, 38 26"/>
-                  <path d="M52 25 C46 25, 41 27, 38 31"/>
-                  <path d="M27 22 L18 19"/>
-                  <path d="M26 26 L16 26"/>
-                  <path d="M26 31 L18 33"/>
-                  <path d="M37 22 L46 19"/>
-                  <path d="M38 26 L48 26"/>
-                  <path d="M38 31 L46 33"/>
-                  <circle cx="18" cy="19" r="1.7" fill="currentColor" stroke="none"/>
-                  <circle cx="16" cy="26" r="1.7" fill="currentColor" stroke="none"/>
-                  <circle cx="18" cy="33" r="1.7" fill="currentColor" stroke="none"/>
-                  <circle cx="46" cy="19" r="1.7" fill="currentColor" stroke="none"/>
-                  <circle cx="48" cy="26" r="1.7" fill="currentColor" stroke="none"/>
-                  <circle cx="46" cy="33" r="1.7" fill="currentColor" stroke="none"/>
-                  <path d="M29 16 L24 11"/>
-                  <path d="M35 16 L40 11"/>
-                  <path d="M32 13 V7"/>
-                  <circle cx="24" cy="11" r="1.7" fill="currentColor" stroke="none"/>
-                  <circle cx="40" cy="11" r="1.7" fill="currentColor" stroke="none"/>
-                  <circle cx="32" cy="7" r="1.7" fill="currentColor" stroke="none"/>
-                </g>
-              </svg>
-            </div>
-            <div>
-              <div class="brand-title script-font">FormaMentis</div>
-              <div class="brand-subtitle">For Future</div>
-            </div>
+          <a class="brand" href="#home">
+            <img src="assets/logo-tree.png" alt="FormaMentis For Future" />
+            <div class="brand-name">FormaMentis For Future</div>
           </a>
 
           <nav class="nav">
             <a href="#chi-siamo">Chi siamo</a>
-            <a href="#corsi">Corsi</a>
+            <a href="#docenti">Docenti</a>
+            <a href="#studenti">Studenti</a>
             <a href="#metodo">Metodo</a>
             <a href="#contatti">Contatti</a>
           </nav>
@@ -551,88 +453,136 @@
 
       <main>
         <section class="hero" id="home">
-          <div class="container hero-inner">
-              <h1 class="hero-title script-font">Formazione che lascia il segno</h1>
+          <div class="container hero-grid">
+            <div>
+              <div class="hero-logo">
+                <img src="assets/logo-full.png" alt="FormaMentis For Future" />
+              </div>
+              <h1 class="hero-title">Formazione per docenti e studenti, progettata per la scuola di oggi</h1>
               <p class="hero-copy">
-                Progettiamo corsi e laboratori per giovani, adulti, scuole e organizzazioni con un
-                approccio umano, pratico e contemporaneo. Crescita personale e competenze reali,
-                nello stesso percorso.
+                Accompagniamo scuole, insegnanti e classi con percorsi formativi dedicati
+                all’innovazione didattica, all’orientamento, alle competenze trasversali e alla
+                crescita educativa. Il sito riprende il nostro linguaggio visivo ufficiale, con il
+                logo istituzionale e una grafica coerente con i materiali del brand.
               </p>
-
               <div class="hero-actions">
-                <a class="btn btn-primary" href="#corsi">Scopri i corsi</a>
+                <a class="btn btn-primary" href="#docenti">Scopri i percorsi</a>
                 <a class="btn btn-secondary" href="#contatti">Contattaci</a>
               </div>
             </div>
 
             <aside class="hero-card">
-              <h3 class="script-font">Un nuovo spazio per la formazione</h3>
+              <h3>A chi ci rivolgiamo</h3>
               <p>
-                FormaMentisForFuture nasce per proporre percorsi curati, accessibili e attuali.
-                Mettiamo al centro le persone, l’apprendimento concreto e la costruzione di nuove
-                opportunità.
+                Progettiamo attività formative per istituzioni scolastiche, insegnanti, gruppi classe
+                e studenti, con proposte modulari e personalizzabili.
               </p>
               <ul class="hero-list">
-                <li>Laboratori pratici e percorsi personalizzabili</li>
-                <li>Formazione in presenza, online o ibrida</li>
-                <li>Attenzione alla crescita personale e professionale</li>
+                <li>Formazione per il personale docente</li>
+                <li>Laboratori e percorsi per studenti</li>
+                <li>Supporto a scuole e progettazioni educative</li>
               </ul>
             </aside>
           </div>
         </section>
 
         <section id="chi-siamo">
-          <div class="container about-grid">
-            <div>
-              <h2 class="section-title script-font">Chi siamo</h2>
-              <p class="section-lead">
-                Siamo un’associazione che promuove apprendimento, orientamento e sviluppo di
-                competenze. Costruiamo percorsi accessibili e curati, con uno stile visivo ed
-                educativo coerente, accogliente e riconoscibile.
+          <div class="container two-col">
+            <div class="section-head">
+              <h2 class="section-title">Chi siamo</h2>
+              <p class="section-text">
+                Siamo un’associazione che realizza percorsi di formazione e progettazione educativa
+                per il mondo della scuola. Lavoriamo su apprendimento, orientamento, innovazione e
+                valorizzazione delle competenze, con un approccio accessibile, attuale e vicino ai
+                bisogni reali di docenti e studenti.
               </p>
             </div>
-            <div class="soft-panel about-card">
+            <div class="panel">
               <p>
-                Ci rivolgiamo a studenti, giovani, adulti, enti del terzo settore e realtà del
-                territorio. Ogni corso nasce dall’ascolto, dalla progettazione condivisa e da una
-                forte attenzione all’impatto umano oltre che professionale.
+                La nostra proposta integra contenuti formativi, attività laboratoriali, metodologie
+                attive e strumenti digitali. Ogni intervento può essere adattato al contesto
+                scolastico, all’ordine di scuola e agli obiettivi del progetto.
               </p>
+              <ul class="check-list">
+                <li>Percorsi formativi per scuole, docenti e classi</li>
+                <li>Progettazione educativa su misura</li>
+                <li>Attività in presenza, online o ibride</li>
+              </ul>
             </div>
           </div>
         </section>
 
-        <section id="corsi">
+        <section id="docenti">
           <div class="container">
-            <h2 class="section-title script-font">I nostri corsi</h2>
-            <p class="section-lead">
-              Percorsi formativi disegnati con semplicità, eleganza e utilità concreta.
-            </p>
-
-            <div class="courses-grid">
-              <article class="course-card">
-                <span class="course-duration">20 ore</span>
-                <h3>Competenze digitali</h3>
+            <div class="section-head">
+              <h2 class="section-title">Percorsi per docenti</h2>
+              <p class="section-text">
+                Proponiamo formazione dedicata al personale scolastico su metodologie didattiche,
+                tecnologie per la didattica, innovazione, progettazione e gestione di esperienze di
+                apprendimento coinvolgenti.
+              </p>
+            </div>
+            <div class="cards-3">
+              <article class="card">
+                <div class="tag">Didattica attiva</div>
+                <h3>Metodologie e competenze trasversali</h3>
                 <p>
-                  Strumenti operativi per usare il digitale in modo consapevole nel lavoro, nello
-                  studio e nella vita quotidiana.
+                  Percorsi per ripensare la lezione in chiave laboratoriale, collaborativa e orientata
+                  allo sviluppo di competenze chiave.
                 </p>
               </article>
-
-              <article class="course-card">
-                <span class="course-duration">16 ore</span>
-                <h3>Soft skills</h3>
+              <article class="card">
+                <div class="tag">Digitale</div>
+                <h3>Tecnologie per l’insegnamento</h3>
                 <p>
-                  Comunicazione, collaborazione, leadership e problem solving con attività
-                  coinvolgenti e casi pratici.
+                  Formazione sull’uso consapevole di strumenti digitali, ambienti online e risorse
+                  utili per la didattica e l’organizzazione del lavoro scolastico.
                 </p>
               </article>
-
-              <article class="course-card">
-                <span class="course-duration">12 ore</span>
-                <h3>Orientamento al lavoro</h3>
+              <article class="card">
+                <div class="tag">Progettazione</div>
+                <h3>Supporto a scuole e team educativi</h3>
                 <p>
-                  CV, colloqui, personal branding e strumenti utili per presentarsi con maggiore
-                  chiarezza e sicurezza.
+                  Affianchiamo istituti e gruppi di lavoro nella costruzione di percorsi formativi,
+                  orientativi e interdisciplinari coerenti con gli obiettivi della scuola.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="studenti">
+          <div class="container">
+            <div class="section-head">
+              <h2 class="section-title">Percorsi per studenti</h2>
+              <p class="section-text">
+                Organizziamo laboratori e attività educative per sostenere orientamento, motivazione,
+                competenze digitali, partecipazione e crescita personale.
+              </p>
+            </div>
+            <div class="cards-3">
+              <article class="card">
+                <div class="tag">Orientamento</div>
+                <h3>Scelte consapevoli e talenti</h3>
+                <p>
+                  Attività per aiutare gli studenti a conoscere meglio sé stessi, valorizzare le
+                  proprie potenzialità e costruire un percorso più consapevole.
+                </p>
+              </article>
+              <article class="card">
+                <div class="tag">Laboratori</div>
+                <h3>Esperienze pratiche e coinvolgenti</h3>
+                <p>
+                  Progetti che uniscono attività, confronto, creatività e apprendimento attivo,
+                  mettendo al centro la partecipazione degli studenti.
+                </p>
+              </article>
+              <article class="card">
+                <div class="tag">Competenze</div>
+                <h3>Crescita personale e cittadinanza</h3>
+                <p>
+                  Percorsi dedicati a collaborazione, comunicazione, autonomia, uso del digitale e
+                  sviluppo di competenze trasversali utili dentro e fuori la scuola.
                 </p>
               </article>
             </div>
@@ -640,67 +590,46 @@
         </section>
 
         <section id="metodo">
-          <div class="container about-grid">
-            <div class="soft-panel about-card">
-              <h2 class="section-title script-font">Il nostro metodo</h2>
+          <div class="container two-col">
+            <div class="panel">
+              <h2 class="section-title">Il nostro metodo</h2>
               <p>
-                Uniamo estetica, chiarezza e sostanza. Ogni percorso ha un’identità precisa e una
-                struttura pensata per far sentire le persone accolte, attive e coinvolte.
+                Costruiamo percorsi chiari, concreti e personalizzabili. Partiamo dai bisogni della
+                scuola e progettiamo attività che uniscono contenuti, pratica, strumenti e relazione.
               </p>
             </div>
             <div>
-              <ul class="method-list">
-                <li>Ascolto dei bisogni e progettazione su misura</li>
-                <li>Approccio laboratoriale e percorsi progettati con cura</li>
-                <li>Materiali semplici, belli da consultare e facili da usare</li>
-                <li>Valorizzazione delle persone e delle comunità</li>
+              <ul class="check-list">
+                <li>Analisi dei bisogni formativi</li>
+                <li>Metodologie didattiche attive e laboratoriali</li>
+                <li>Integrazione tra formazione, digitale e orientamento</li>
+                <li>Adattabilità a ordini di scuola e contesti diversi</li>
               </ul>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="container">
-            <h2 class="section-title script-font">A chi ci rivolgiamo</h2>
-            <div class="audience-grid">
-              <article class="audience-card">
-                <h3>Scuole</h3>
-                <p>Laboratori, percorsi orientativi e attività educative per studenti e gruppi classe.</p>
-              </article>
-              <article class="audience-card">
-                <h3>Giovani e adulti</h3>
-                <p>Corsi per rafforzare competenze trasversali, digitali e professionali.</p>
-              </article>
-              <article class="audience-card">
-                <h3>Enti e organizzazioni</h3>
-                <p>Progettazione di attività formative personalizzate per team, volontari e comunità.</p>
-              </article>
             </div>
           </div>
         </section>
 
         <section id="contatti">
           <div class="container contact-grid">
-            <div>
-              <h2 class="section-title script-font">Contatti</h2>
-              <p class="section-lead">
-                Raccontaci il tuo progetto: possiamo costruire insieme un percorso formativo su
-                misura, coerente con la tua identità e con i tuoi obiettivi.
+            <div class="section-head">
+              <h2 class="section-title">Contatti</h2>
+              <p class="section-text">
+                Se vuoi presentare il tuo istituto, proporre una collaborazione o richiedere un
+                percorso formativo, scrivici. Possiamo costruire insieme una proposta su misura.
               </p>
             </div>
-
-            <div class="soft-panel contact-box">
+            <div class="panel contact-box">
               <div class="contact-item">
                 <strong>Email</strong><br />
                 <a href="mailto:info@formamentisforfuture.it">info@formamentisforfuture.it</a>
               </div>
               <div class="contact-item">
                 <strong>Telefono</strong><br />
-                <a href="tel:+390212345678">+39 02 1234 5678</a>
+                <a href="tel:+390000000000">+39 00 0000 0000</a>
               </div>
               <div class="contact-item">
                 <strong>Sede</strong><br />
-                <span>Milano, Italia</span>
+                <span>Italia</span>
               </div>
             </div>
           </div>
@@ -708,9 +637,7 @@
       </main>
 
       <footer>
-        <div class="container">
-          © 2026 FormaMentisForFuture · Sito statico pronto per GitHub Pages
-        </div>
+        <div class="container">© 2026 FormaMentis For Future · Sito statico pronto per GitHub Pages</div>
       </footer>
     </div>
   </body>
